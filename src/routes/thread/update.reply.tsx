@@ -68,7 +68,7 @@ const UpdateReplyPage = () => {
         const data = {
             content: isInputValue,
             authorId: userData?.id,
-            threadId: isTheReply?.Thread.id,
+            threadId: isTheReply?.Thread?.id,
             image: isImageFile
         };
         if (token && replyId) {

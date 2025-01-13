@@ -1,6 +1,5 @@
 import { apiURL } from '@/utils/baseurl';
 import axios, { AxiosResponse } from 'axios';
-import Cookies from 'js-cookie';
 
 export const createNewThread = async (token: string, data: any) => {
   console.log("thread servis cek gambar: ", data);

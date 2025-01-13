@@ -30,7 +30,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId, image, fullname, user
     const [isOption, setIsOption] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
-        const isFollowing = userData?.following.map(user => user.follower?.username);
+        const isFollowing = userData?.following?.map(user => user.follower?.username);
         if (!isFollowing?.includes(username)) {
             setIsShowFollowBtn(true)
         } else {

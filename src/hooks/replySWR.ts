@@ -1,6 +1,5 @@
-import useSWR, { mutate, SWRResponse } from 'swr';
-import { createNewReply, getReplyById } from '@/features/threads/services/reply.service';
-import { ReplyType } from '@/types/thread.types';
+import useSWR from 'swr';
+import { getReplyById } from '@/features/threads/services/reply.service';
 
 export const useReplySWRbyId = (threadId: string, token: string) => {
     const { data, error, isLoading, mutate } = useSWR(threadId ? `threads/${threadId}` : null, () => getReplyById(token, threadId));

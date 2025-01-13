@@ -37,7 +37,7 @@ const UsersProfilePage = () => {
       if (token) {
         const theUser: UserDataType = await fetchUserById(token, userId!).then(res => res.data);
         setUserProfile(theUser);
-        setThreads(theUser.Thread);
+        setThreads(theUser.Thread ? theUser.Thread : null);
       } else {
         throw new Error('Invalid token')
       };
@@ -71,8 +71,8 @@ const UsersProfilePage = () => {
               username={userProfile?.username as string}
               fullname={userProfile?.fullname ? userProfile.fullname as string : userProfile?.username as string}
               bio={userProfile?.bio}
-              following={userProfile?.following.length}
-              follower={userProfile?.follower.length} 
+              following={userProfile?.following?.length}
+              follower={userProfile?.follower?.length} 
               objectUserId={userProfile?.id}
             />
 

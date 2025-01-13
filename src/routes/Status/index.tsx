@@ -7,16 +7,16 @@ import UserProfile from "@/components/userProfile";
 import LikeAndReply from "@/components/Thread/likeAndReply";
 import { useEffect, useRef, useState } from "react";
 import ThreadCard from "@/components/Thread/threadCard";
-import { getThreadById } from "@/features/threads/services/thread.services";
+// import { getThreadById } from "@/features/threads/services/thread.services";
 import { ReplyType, ThreadDataType } from "@/types/thread.types";
 import useUserStore from "@/hooks/userStore";
 import { fetchCreateLike, fetchDeleteLike } from "@/features/threads/services/like.services";
 import { createNewReply } from "@/features/threads/services/reply.service";
 import { UserRound, X } from "lucide-react";
 import { monthsName } from "@/utils/format-date";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import StatusSkeleton from "@/components/Thread/statusSkeleton";
-import ThreadCardSkeleton from "@/components/Thread/threadCardSkeleton";
+// import ThreadCardSkeleton from "@/components/Thread/threadCardSkeleton";
 import useSWR, { SWRResponse } from "swr";
 import axios, { AxiosResponse } from "axios";
 import { apiURL } from "@/utils/baseurl";
@@ -177,20 +177,20 @@ const StatusPage = () => {
         }
     }, [userData, thread])
 
-    async function retrieveTheThread() {
-        const token = Cookies.get('token');
-        try {
-            if (token) {
-                const thread = await getThreadById(token, String(idThread));
-                setThread(thread);
-                setIsLoadingReply(false);
-            } else {
-                throw new Error('Invalid token')
-            };
-        } catch (error) {
-            console.log(error)
-        }
-    };
+    // async function retrieveTheThread() {
+    //     const token = Cookies.get('token');
+    //     try {
+    //         if (token) {
+    //             const thread = await getThreadById(token, String(idThread));
+    //             setThread(thread);
+    //             setIsLoadingReply(false);
+    //         } else {
+    //             throw new Error('Invalid token')
+    //         };
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // };
 
     const location = useLocation();
     useEffect(() => {

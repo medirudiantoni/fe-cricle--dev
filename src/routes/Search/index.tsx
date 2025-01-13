@@ -21,7 +21,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     if (isResults.length > 0) {
-      const followedUsers = isResults.filter(user => user.follower.find(data => data.following?.id == userData?.id));
+      const followedUsers = isResults.filter(user => user.follower?.find(data => data.following?.id == userData?.id));
       setIsFollowings(followedUsers);
     }
   }, [isResults])

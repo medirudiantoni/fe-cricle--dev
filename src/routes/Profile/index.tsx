@@ -78,7 +78,7 @@ const UserProfilePage = () => {
                 fullname={userData?.fullname ? userData.fullname : userData?.username as string}
                 bio={userData?.bio}
                 following={userData?.following ? userData.following.length : 0}
-                follower={userData?.follower.length}
+                follower={userData?.follower?.length}
                 onEditProfile={() => setEditProfile(true)} />
             ) : (
               <UserProfileCard username="none" fullname="none" bio="none" following={0} follower={0} />

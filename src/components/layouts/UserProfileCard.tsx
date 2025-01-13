@@ -23,7 +23,7 @@ const UserProfileCard: React.FC<UserProfileCardProps> = ({ profile, background, 
     const [isLoading, setIsLoading] = useState(false);
     const [isShowFollowBtn, setIsShowFollowBtn] = useState(false);
     useEffect(() => {
-        const isFollowing = userData?.following.map(user => user.follower?.username);
+        const isFollowing = userData?.following?.map(user => user.follower?.username);
         if (!isFollowing?.includes(username)) {
             setIsShowFollowBtn(true)
         } else {
